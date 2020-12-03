@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_031629) do
+ActiveRecord::Schema.define(version: 2020_12_03_170515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "coffee_beans", force: :cascade do |t|
     t.string "batch_id"
-    t.string "integer"
     t.string "name"
-    t.string "string"
     t.string "roast"
     t.string "weight"
     t.string "country_of_origin"
