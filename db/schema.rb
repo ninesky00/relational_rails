@@ -10,36 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_170515) do
+ActiveRecord::Schema.define(version: 2020_12_04_032247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "coffee_beans", force: :cascade do |t|
-    t.string "batch_id"
     t.string "name"
     t.string "roast"
-    t.string "weight"
+    t.integer "weight"
     t.string "country_of_origin"
-    t.string "blend"
-    t.string "boolean"
-    t.string "roasted_at"
-    t.string "date"
+    t.boolean "blend"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.bigint "roaster_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["roaster_id"], name: "index_coffee_beans_on_roaster_id"
   end
 
   create_table "roasters", force: :cascade do |t|
     t.string "name"
-    t.string "string"
-    t.string "subscription_service"
-    t.string "boolean"
-    t.string "micro"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "micro"
+    t.boolean "subscription_service"
   end
 
+  add_foreign_key "coffee_beans", "roasters"
 end
