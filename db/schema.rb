@@ -15,6 +15,23 @@ ActiveRecord::Schema.define(version: 2020_12_04_032247) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "authors", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.date "publications_since"
+    t.date "last_publication"
+    t.boolean "currently_active"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.date "publication_date"
+    t.integer "pages"
+    t.boolean "currently_printed"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_books_on_author_id"
+  end
+
   create_table "coffee_beans", force: :cascade do |t|
     t.string "name"
     t.string "roast"
@@ -36,5 +53,6 @@ ActiveRecord::Schema.define(version: 2020_12_04_032247) do
     t.boolean "subscription_service"
   end
 
+  add_foreign_key "books", "authors"
   add_foreign_key "coffee_beans", "roasters"
 end

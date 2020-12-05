@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 CoffeeBean.destroy_all
 Roaster.destroy_all
+Book.destroy_all
+Author.destroy_all
 
 stumptown = Roaster.create!(name: "Stumptown Coffee", micro: false, subscription_service: true, location: "Koreatown, NY")
 starbuckspr = Roaster.create!(name: "Starbucks Private Reserve", micro: false, subscription_service: false, location: "Chelsea, NY")
@@ -15,3 +17,14 @@ blue_bottle = Roaster.create!(name: "Blue Bottle Coffee", micro: false, subscrip
 
 honduras_el_puente = stumptown.coffee_beans.create!(name: "Honduras El Puente", weight: 12, blend: false, roast: "Light")
 hair_bender = stumptown.coffee_beans.create!(name: "Hair Bender", weight: 12, blend: false, roast: "Medium")
+
+
+tolkien = Author.create! name:"JRR Tolkien", age: 87, publications_since: "1922-05-11", last_publication: "1955-10-20", currently_active: false 
+rowling = Author.create! name:"JK Rowling", age: 55, publications_since: "1997-06-26", last_publication: "2007-07-21", currently_active: false
+gladwell = Author.create! name:"Malcolm Gladwell", age: 57, publications_since: "2000-03-01", last_publication: "2019-09-10", currently_active: true
+king = Author.create! name:"Stephen King", age: 73, publications_since: "1973-04-01", last_publication: "2019-09-10", currently_active: true
+
+gladwell.books.create! title:"Talking to Strangers", publication_date: "2019-09-10", pages: 386, currently_printed: true
+gladwell.books.create! title:"Outliers", publication_date: "2008-11-18", pages: 304, currently_printed: true
+gladwell.books.create! title:"The Tipping Point", publication_date: "2000-03-01", pages: 301, currently_printed: true
+king.books.create! title:"Rage", publication_date: "1977-09-13", pages: 211, currently_printed: false
