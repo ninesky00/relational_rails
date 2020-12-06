@@ -46,11 +46,11 @@ ActiveRecord::Schema.define(version: 2020_12_04_032247) do
 
   create_table "roasters", force: :cascade do |t|
     t.string "name"
+    t.boolean "subscription_service"
+    t.boolean "micro"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "micro"
-    t.boolean "subscription_service"
   end
 
   add_foreign_key "books", "authors"
