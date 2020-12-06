@@ -7,8 +7,4 @@ class RoastersController < ApplicationController
         @roaster = Roaster.find(params[:id])
     end
 
-    # def is_micro?
-    #     "hello world"
-    # end
-
 end

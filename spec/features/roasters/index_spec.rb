@@ -27,7 +27,7 @@ RSpec.describe 'Index Page' do
         expect(page).to have_content (stumptown.updated_at)
     end
 
-    xit '' do
+    it '' do
         visit '/parents'
 
         expect(page).to have_button("New Parent")
