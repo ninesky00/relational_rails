@@ -1,5 +1,6 @@
 <h1>Roaster List</h1>
 
 <% @roasters.each do |roaster| %>
-    <%= link_to "#{roaster.name}" , "/roasters/#{roaster.id}" %></br></br>
+    <%= link_to "#{roaster.name}", "/roasters/#{roaster.id}" %></br></br>
 <% end %>
+<%= link_to "New Roaster",  "/roasters/new"%>
