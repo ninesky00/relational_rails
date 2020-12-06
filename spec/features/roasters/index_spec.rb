@@ -6,7 +6,7 @@ RSpec.describe 'Index Page' do
         starbuckspr = Roaster.create!(name: "Starbucks Private Reserve", micro: false, subscription_service: false, location: "Chelsea, NY")
         switchback = Roaster.create!(name: "Switchback Coffee", micro: true, subscription_service: false, location: "Colorado Springs ,CO")
         blue_bottle = Roaster.create!(name: "Blue Bottle Coffee", micro: false, subscription_service: true, location: "Midtown, NY")
-
+        require 'pry'; binding.pry
         visit '/parents'
 
         expect(page).to have_content(stumptown.name)
