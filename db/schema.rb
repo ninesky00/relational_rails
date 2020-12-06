@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_233808) do
+ActiveRecord::Schema.define(version: 2020_12_04_032247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,5 +32,27 @@ ActiveRecord::Schema.define(version: 2020_12_03_233808) do
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
+  create_table "coffee_beans", force: :cascade do |t|
+    t.string "name"
+    t.string "roast"
+    t.integer "weight"
+    t.string "country_of_origin"
+    t.boolean "blend"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.bigint "roaster_id"
+    t.index ["roaster_id"], name: "index_coffee_beans_on_roaster_id"
+  end
+
+  create_table "roasters", force: :cascade do |t|
+    t.string "name"
+    t.boolean "subscription_service"
+    t.boolean "micro"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "books", "authors"
+  add_foreign_key "coffee_beans", "roasters"
 end
