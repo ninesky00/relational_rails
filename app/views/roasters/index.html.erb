@@ -1,5 +1,5 @@
 <h1>Roaster List</h1>
 
 <% @roasters.each do |roaster| %>
-    <h2><%= roaster.name =%></h2>
+    <%= link_to "#{roaster.name}" , "/roasters/#{roaster.id}" %></br></br>
 <% end %>

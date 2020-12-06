@@ -1,0 +1,9 @@
+<h1><%= @roaster.name %></h1>
+<li>
+    <ul>Is a microroastery? <%= @roaster.micro %></ul>
+    <ul>Has subscription service? <%= @roaster.subscription_service %></ul>
+    <ul>Location: <%= @roaster.location %></ul>
+</li>
+
+<%= Roaster.is_micro? %>
+<% require 'pry'; binding.pry %>

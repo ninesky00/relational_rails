@@ -14,10 +14,10 @@ RSpec.describe 'Index Page' do
         expect(page).to have_content(blue_bottle.name)
     end
 
-    xit 'can see the id and its attributes' do 
+    it 'can see the id and its attributes' do 
         stumptown = Roaster.create!(name: "Stumptown Coffee", micro: false, subscription_service: true, location: "Koreatown, NY")
 
-        visit "/parents/#{stumptown.id}"
+        visit "/roasters/#{stumptown.id}"
 
         expect(page).to have_content (stumptown.name)
         expect(page).to have_content (stumptown.micro)
