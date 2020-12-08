@@ -1,0 +1,14 @@
+<h1>Edit <%= @roaster.name %> Information</h1>
+<%= form_tag "/roasters/#{@roaster.id}", :method => "patch" do %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %></br></br>
+    <%= label_tag :micro, "Is it a microroastery?: " %>
+    <%= text_field_tag :micro %></br></br>
+    <%= label_tag :subscription_service, "Does it offer subscription services?: " %>
+    <%= text_field_tag :subscription_service %></br></br>
+    <%= label_tag :location, "Location: " %>
+    <%= text_field_tag :location %></br></br>
+
+    <%= submit_tag 'Edit Info' %>
+
+<% end %>
