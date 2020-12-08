@@ -7,3 +7,5 @@
     <ul>Created At: <%= @coffeebean.created_at %></ul>
     <ul>Updated At: <%= @coffeebean.updated_at %></ul>
 </li>
+
+<%= link_to "Update Coffee Bean", "/coffeebeans/#{@coffeebean.id}/edit" %>

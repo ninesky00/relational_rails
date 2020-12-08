@@ -1,0 +1,15 @@
+<h1>Edit <%= @coffeebean.name %> Info</h1>
+
+<%= form_tag "/coffeebeans/#{@coffeebean.id}", method: :patch do %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %></br></br>
+    <%= label_tag :roast, "Light/Med/Dark Roast: " %>
+    <%= text_field_tag :roast %></br></br>
+    <%= label_tag :country_of_origin, "Country of Origin: " %>
+    <%= text_field_tag :country_of_origin %></br></br>
+    <%= label_tag :blend, "Blended or not? true/false " %>
+    <%= text_field_tag :blend %></br></br>
+
+    <%= submit_tag 'Edit Coffee Bean' %>
+
+<% end %>
