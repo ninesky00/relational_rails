@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-Rspec.describe 'Delete' do
+RSpec.describe 'Delete' do
     it "can delete a parent" do
         stumptown = Roaster.create!(name: "Stumptown Coffee", micro: false, subscription_service: true, location: "Koreatown, NY")
         visit "/roasters/#{stumptown.id}"
-        click_on "Delete"
+        click_button "Delete"
 
-        expect(page).not_to have_content("Stumptown Coffee")
+        expect(page).not_to have_content(stumptown.name)
     end
 end

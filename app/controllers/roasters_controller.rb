@@ -25,6 +25,10 @@ class RoastersController < ApplicationController
         redirect_to "/roasters/#{@roaster.id}"
     end
 
+    def delete
+        Roaster.destroy(params[:id])
+        redirect_to '/roasters'
+    end
     private
     def roaster_params
         params.permit(:name, :micro, :subscription_service, :location)

@@ -1,5 +1,6 @@
 <h1><%= @roaster.name %></h1>
 <%= link_to "Edit", "/roasters/#{@roaster.id}/edit"%>
+<%= button_to "Delete", "/roasters/#{@roaster.id}", method: :delete %>
 <li>
     <ul>Microroastery: <%= @roaster.micro %></ul>
     <ul>Subscription Services: <%= @roaster.subscription_service %></ul>
