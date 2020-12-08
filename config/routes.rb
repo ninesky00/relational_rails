@@ -14,5 +14,8 @@ Rails.application.routes.draw do
 
   # Coffee Bean -> Roasters Routes
   get '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#index'
+  post '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#create'
+  get '/roasters/:id/coffeebeans/new', to: 'roaster_coffee_beans#new'
+  
 
 end
