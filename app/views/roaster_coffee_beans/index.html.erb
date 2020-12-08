@@ -1,0 +1,4 @@
+<h1>Coffee Beans By <%= @roaster.name %></h1>
+<% @roaster.coffee_beans.each do |coffee_bean|%>
+    <%= link_to "#{coffee_bean.name}" %></br></br>
+<% end %>

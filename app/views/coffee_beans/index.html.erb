@@ -1,0 +1,5 @@
+<h1>Coffee Beans</h1>
+
+<% @coffeebeans.each do |coffeebean| %>
+    <%= link_to "#{coffeebean.name}", "/coffeebeans/#{coffeebean.id}" %></br></br>
+<% end %>
