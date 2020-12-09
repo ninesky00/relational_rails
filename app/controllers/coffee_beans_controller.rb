@@ -1,8 +1,10 @@
 class CoffeeBeansController < ApplicationController
 
     def index
-        #@coffeebeans = CoffeeBean.sort_by_date
         @coffeebeans = CoffeeBean.sort_by_blend
+        if params[:weight]
+            @coffeebeans = CoffeeBean.where("weight >= ?", params[:weight])
+        end
     end
 
     def show
