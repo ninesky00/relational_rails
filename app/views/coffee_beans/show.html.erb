@@ -9,3 +9,4 @@
 </li>
 
 <%= link_to "Update Coffee Bean", "/coffeebeans/#{@coffeebean.id}/edit" %>
+<%= button_to "Delete", "/coffeebeans/#{@coffeebean.id}", method: :delete %>

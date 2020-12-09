@@ -18,6 +18,11 @@ class CoffeeBeansController < ApplicationController
         redirect_to "/coffeebeans/#{@coffeebean.id}"
     end
 
+    def delete
+        CoffeeBean.destroy(params[:id])
+        redirect_to '/coffeebeans'
+    end
+
     private
 
     def coffee_beans_params

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/coffeebeans/:id', to: 'coffee_beans#show'
   get '/coffeebeans/:id/edit', to: 'coffee_beans#edit'
   patch '/coffeebeans/:id', to: 'coffee_beans#update'
+  delete '/coffeebeans/:id', to: 'coffee_beans#delete'
 
   # Coffee Bean -> Roasters Routes
   get '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#index'
