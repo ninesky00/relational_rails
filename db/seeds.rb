@@ -17,7 +17,7 @@ blue_bottle = Roaster.create!(name: "Blue Bottle Coffee", micro: false, subscrip
 
 honduras_el_puente = stumptown.coffee_beans.create!(name: "Honduras El Puente", weight: 12, blend: false, roast: "Light", country_of_origin: "Honduras")
 hair_bender = stumptown.coffee_beans.create!(name: "Hair Bender", weight: 12, blend: false, roast: "Medium", country_of_origin: "N/A")
-costa_rica_naranjo = starbuckspr.coffee_beans.create!(name: "Costa Rica Naranjo", weight: 8, roast: "Medium", country_of_origin: "Costa Rica")
+costa_rica_naranjo = starbuckspr.coffee_beans.create!(name: "Costa Rica Naranjo", blend: false, weight: 8, roast: "Medium", country_of_origin: "Costa Rica")
 institute_street_house = switchback.coffee_beans.create!(name: "Institute Street House Blend", weight: 12, blend: true, roast: "Medium", country_of_origin: "N/A")
 colombia_s_f = switchback.coffee_beans.create!(name: "Colombia San Fermin", weight: 80, blend: false, roast: "Light", country_of_origin: "Colombia")
 ethiopia_dammu = switchback.coffee_beans.create!(name: "Ethiopia Dammu - Abana Coffee Estates", weight: 80, blend: false, roast: "Light", country_of_origin: "Ethiopia")

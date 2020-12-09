@@ -1,7 +1,8 @@
 class CoffeeBeansController < ApplicationController
 
     def index
-        @coffeebeans = CoffeeBean.sort_by_date
+        #@coffeebeans = CoffeeBean.sort_by_date
+        @coffeebeans = CoffeeBean.sort_by_blend
     end
 
     def show
