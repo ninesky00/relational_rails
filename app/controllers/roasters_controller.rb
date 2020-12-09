@@ -1,6 +1,6 @@
 class RoastersController < ApplicationController
     def index
-        @roasters = Roaster.all
+        @roasters = Roaster.sort_by_date
     end
 
     def show

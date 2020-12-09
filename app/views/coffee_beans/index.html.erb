@@ -1,5 +1,6 @@
 <h1>Coffee Beans</h1>
 
 <% @coffeebeans.each do |coffeebean| %>
-    <%= link_to "#{coffeebean.name}", "/coffeebeans/#{coffeebean.id}" %></br></br>
+    <%= link_to "#{coffeebean.name}", "/coffeebeans/#{coffeebean.id}" %>
+    <p>Created at: <%= coffeebean.created_at %></p></br></br>
 <% end %>

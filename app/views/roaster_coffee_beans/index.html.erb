@@ -1,5 +1,6 @@
 <h1>Coffee Beans By <%= @roaster.name %></h1>
-<% @roaster.coffee_beans.each do |coffee_bean| %>
-    <%= link_to "#{coffee_bean.name}", "/coffeebeans/#{coffee_bean.id}" %></br></br>
+<% @roaster_sorted.each do |coffee_bean| %>
+    <%= link_to "#{coffee_bean.name}", "/coffeebeans/#{coffee_bean.id}" %>
+    <p>Created at: <%=  coffee_bean.created_at%></p></br></br>
 <% end %>
 <%= link_to "Create Beans", "/roasters/#{@roaster.id}/coffeebeans/new" %>

@@ -1,7 +1,7 @@
 class CoffeeBeansController < ApplicationController
 
     def index
-        @coffeebeans = CoffeeBean.all
+        @coffeebeans = CoffeeBean.sort_by_date
     end
 
     def show
