@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/roasters', to: 'roasters#index'
   get '/roasters/new', to: 'roasters#new'
   get '/roasters/:id', to: 'roasters#show'
-  get '/roasters/:id/edit', to: 'roasters#edit'
+  get '/roasters/:id/edit', to: 'roasters#edit', as: :roaster_update
   patch '/roasters/:id', to: 'roasters#update'
   post '/roasters', to: 'roasters#create'
   delete '/roasters/:id', to: 'roasters#delete'
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   delete '/coffeebeans/:id', to: 'coffee_beans#delete'
 
   # Coffee Bean -> Roasters Routes
-  get '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#index', as: 'roaster_coffee'
+  get '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#index', as: :roaster_coffee
   post '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#create'
   get '/roasters/:id/coffeebeans/new', to: 'roaster_coffee_beans#new'
   
