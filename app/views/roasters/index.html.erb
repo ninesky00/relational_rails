@@ -5,6 +5,7 @@
 
 <% @roasters.each do |roaster| %>
     <%= link_to "#{roaster.name}", "/roasters/#{roaster.id}" %>
+    <p>- <%= roaster.coffee_count %> types of coffee</p>
     <p>Created at: <%= roaster.created_at %></p></br></br>
 <% end %>
 <%= link_to "New Roaster",  "/roasters/new"%>

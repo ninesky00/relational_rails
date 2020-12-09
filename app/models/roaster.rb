@@ -10,7 +10,7 @@ class Roaster < ApplicationRecord
         # Find count of coffee beans per roaster
         # Order by coffee bean count
         all.sort_by do |roaster|
-            roaster.coffee_beans.count
+            -roaster.coffee_beans.count
         end
     end
     
