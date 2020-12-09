@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   delete '/coffeebeans/:id', to: 'coffee_beans#delete'
 
   # Coffee Bean -> Roasters Routes
-  get '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#index'
+  get '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#index', as: 'roaster_coffee'
   post '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#create'
   get '/roasters/:id/coffeebeans/new', to: 'roaster_coffee_beans#new'
   

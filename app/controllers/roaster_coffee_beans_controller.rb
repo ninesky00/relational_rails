@@ -2,6 +2,9 @@ class RoasterCoffeeBeansController < ApplicationController
     def index
         @roaster = Roaster.find(params[:id])
         @roaster_sorted = @roaster.coffee_beans.order(:created_at)
+        if params[:sorted_by_alpha]
+            @roaster_sorted = @roaster.coffee_beans.order(:name)
+        end
     end
 
     def new
