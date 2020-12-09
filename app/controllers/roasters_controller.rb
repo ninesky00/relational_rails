@@ -1,6 +1,10 @@
 class RoastersController < ApplicationController
     def index
-        @roasters = Roaster.sort_by_date
+        if params[:sort_by_count]
+            @roasters = Roaster.sort_by_count
+        else
+            @roasters = Roaster.sort_by_date
+        end
     end
 
     def show

@@ -1,5 +1,8 @@
 <h1>Roaster List</h1>
 
+<%= link_to "Sort list by roaster's # of different coffees", roasters_path(:sort_by_count => "sort_by_coffee_count") %>
+</br></br>
+
 <% @roasters.each do |roaster| %>
     <%= link_to "#{roaster.name}", "/roasters/#{roaster.id}" %>
     <p>Created at: <%= roaster.created_at %></p></br></br>
