@@ -1,0 +1,13 @@
+<a href="/authors">Author Index</a>
+
+<h1>Book name: <%= @book.name %></h1>
+
+<p>Publication_date: <%= @book.publication_date %></p>
+
+<p>Pages: <%= @book.pages %></p>
+
+<p>Currently_printed: <%= @book.currently_printed %></p>
+
+<p><%= button_to 'Delete', "/books/#{@book.id}", method: :delete %></p>
+
+<%= link_to 'Update Book', "/books/#{@book.id}/edit" %>

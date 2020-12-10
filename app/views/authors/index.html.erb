@@ -1,0 +1,21 @@
+<%= link_to 'welcome', '/' %>
+<h1>All Authors</h1>
+
+<%= form_tag "/authors", method: :get do %>
+  <%= label_tag :age %>
+  <%= number_field_tag :age %>
+  <%= submit_tag 'Enter age threshold' %>
+<% end %>
+
+<p><%= link_to 'Sort by book count', authors_path(:books => "count") %></p>
+
+<% @authors.each do |author|%>
+<p>Author:<%= link_to "#{author.name}", "/authors/#{author.id}" %></p>
+<p>This author has <%= author.books.count %> books</p>
+<p>Age:<%= author.age %></p>
+<p>Publications_since:<%= author.publications_since %></p>
+<p>Last_publication:<%= author.last_publication %></p>
+<p>Currently_active:<%= author.currently_active %></p>
+
+<% end %>
+<%= link_to 'New Author', '/authors/new' %>

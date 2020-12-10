@@ -1,0 +1,14 @@
+<%= form_tag("/authors/#{@author.id}", method: :patch) do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <%= label_tag :age %>
+  <%= text_field_tag :age %>
+  <%= label_tag :publications_since %>
+  <%= text_field_tag :publications_since%>
+  <%= label_tag :last_publication %>
+  <%= text_field_tag :last_publication %>
+  <%= label_tag :currently_active %>
+  <%= text_field_tag :currently_active %>
+
+  <%= submit_tag 'Update Author' %>
+<% end %>
