@@ -17,6 +17,4 @@ class Roaster < ApplicationRecord
     def coffee_count
         coffee_beans.count
     end
-
-    #validates_presence_of :name, :location
 end
