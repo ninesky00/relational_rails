@@ -26,4 +26,9 @@ RSpec.describe 'Index' do
         expect(page).not_to have_content(@honduras_el_puente.name)
         expect(page).not_to have_content(@hair_bender.name)
     end
+    it "can sort by boolean column default when visiting CoffeeBeans index" do
+        visit '/coffeebeans'
+
+        expect(page.all('a')[1]).to have_content("Institute Street House Blend")
+    end
 end
