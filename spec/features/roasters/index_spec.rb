@@ -32,5 +32,12 @@ RSpec.describe 'Index Page' do
 
         expect(page.all('a')[2]).to have_content("Blue Bottle Coffee")
     end
+    it "can have an Edit link per Roaster entry" do
+        visit '/roasters'
+
+        expect(page.all('a')[3]).to have_content("Edit")
+        expect(page.all('a')[6]).to have_content("Edit")
+        expect(page.all('a')[9]).to have_content("Edit")
+    end
 
 end
