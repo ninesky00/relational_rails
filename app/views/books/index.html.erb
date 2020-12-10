@@ -1,0 +1,9 @@
+<%= link_to 'welcome', "/" %>
+<h1>All Books</h1>
+
+<% @books.each do |book|%>
+<p>Name: <%= link_to "#{book.name}", "/books/#{book.id}" %></p>
+<p>Publication_date: <%= book.publication_date %></p>
+<p>Pages: <%= book.pages %></p>
+<p>Currently_printed: <%= book.currently_printed %></p>
+<% end %>

@@ -1,0 +1,12 @@
+<%= form_tag("/books/#{@book.id}", method: :patch) do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <%= label_tag :publication_date %>
+  <%= text_field_tag :publication_date %>
+  <%= label_tag :pages %>
+  <%= text_field_tag :pages%>
+  <%= label_tag :currently_printed %>
+  <%= text_field_tag :currently_printed %>
+
+  <%= submit_tag 'Update Book' %>
+<% end %>

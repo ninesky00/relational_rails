@@ -1,0 +1,17 @@
+<a href="/authors">Author Index</a>
+
+<h1>Author: <%= @author.name %></h1>
+
+<p>Age: <%= @author.age %></p>
+
+<p>Publications_since: <%= @author.publications_since %></p>
+
+<p>Last_publication: <%= @author.last_publication %></p>
+
+<p>Currently_active: <%= @author.currently_active %></p>
+
+<p><%= link_to "Books", "/authors/#{@author.id}/books" %></p>
+<%# this link is destination is unintended%>
+<p><%= button_to 'Delete', "/authors/#{@author.id}", method: :delete %></p>
+
+<a href="/authors/<%= @author.id %>/edit">Update Author</a>
