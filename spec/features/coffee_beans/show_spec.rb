@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Index' do
+RSpec.describe 'Show' do
     before :each do
         @stumptown = Roaster.create!(name: "Stumptown Coffee", micro: false, subscription_service: true, location: "Koreatown, NY")
         @starbuckspr = Roaster.create!(name: "Starbucks Private Reserve", micro: false, subscription_service: false, location: "Chelsea, NY")
@@ -18,10 +18,13 @@ RSpec.describe 'Index' do
         @kirinyaga_kaguyu = @blue_bottle.coffee_beans.create!(name: "Kenya Kirinyaga Kaguyu", weight: 12, blend: false, roast: "Light", country_of_origin: "Kenya")
         @santa_rosa_finca_santa_ana = @blue_bottle.coffee_beans.create!(name: "Guatemala Santa Rosa Finca Santa Ana", weight: 12, blend: false, roast: "Dark", country_of_origin: "Guatemala")
     end
-    it "can delete CoffeeBean entry from index page" do
-        visit "/coffeebeans/#{@institute_street_house.id}"
-        click_button "Delete"
+    it "can see the entry for a specific CoffeeBean" do
+        visit "/coffeebeans/#{@hair_bender.id}"
 
-        expect(page).not_to have_content(@institute_street_house.name)
+        expect(page).to have_content(@hair_bender.name)
+        expect(page).to have_content(@hair_bender.weight)
+        expect(page).to have_content(@hair_bender.blend)
+        expect(page).to have_content(@hair_bender.roast)
+        expect(page).to have_content(@hair_bender.country_of_origin)
     end
 end
