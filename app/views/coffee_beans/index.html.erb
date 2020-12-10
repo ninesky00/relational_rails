@@ -8,6 +8,7 @@
 </br></br>
 <% @coffeebeans.each do |coffeebean| %>
     <%= link_to "#{coffeebean.name}", "/coffeebeans/#{coffeebean.id}" %>
+    <%= link_to "Edit", coffee_bean_update_path(:id => coffeebean.id)%>
     <p>Blend: <%= coffeebean.blend %></p>
     <p>Created at: <%= coffeebean.created_at %></p></br></br>
 <% end %>

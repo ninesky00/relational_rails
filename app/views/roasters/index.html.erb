@@ -4,7 +4,8 @@
 </br></br>
 
 <% @roasters.each do |roaster| %>
-    <%= link_to "#{roaster.name}", "/roasters/#{roaster.id}" %>  <%= link_to "Edit", roaster_update_path(:id => roaster.id)%>
+    <%= link_to "#{roaster.name}", "/roasters/#{roaster.id}" %>  
+    <%= link_to "Edit", roaster_update_path(:id => roaster.id)%>
     <%= link_to "Delete", "/roasters/#{roaster.id}", method: :delete %>
     <p>- <%= roaster.coffee_count %> types of coffee</p>
     <p>Created at: <%= roaster.created_at %></p>
