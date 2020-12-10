@@ -32,4 +32,5 @@ RSpec.describe 'Index Page' do
 
         expect(page.all('a')[2]).to have_content("Blue Bottle Coffee")
     end
+
 end
