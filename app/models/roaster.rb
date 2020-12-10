@@ -1,5 +1,5 @@
 class Roaster < ApplicationRecord
-    has_many :coffee_beans
+    has_many :coffee_beans, dependent: :destroy
 
     def self.sort_by_date
         order(:created_at)
