@@ -43,5 +43,9 @@
    
 ### Relations Schemas
 
+# Author-Books
 ![Schema for Author-Books](/public/auth-books.png)
+
+
+# Roaster-CoffeeBeans
 ![Schema for Roaster-CoffeeBeans](/public/roaster-coffees.png)
