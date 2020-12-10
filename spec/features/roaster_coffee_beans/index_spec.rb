@@ -24,6 +24,12 @@ RSpec.describe 'Index' do
 
         expect(page.all('a')[4]).to have_content("Guatemala Santa Rosa Finca Santa Ana")
     end
+    it "can reach the Roaster's CoffeeBean index" do
+        visit "roasters/#{@stumptown.id}/coffeebeans"
+
+        expect(page).to have_content(@stumptown.coffee_beans.first.name)
+        expect(page).to have_content(@stumptown.coffee_beans.last.name)
+    end
     it "can display count of coffee products per Roaster on Roaster-CoffeeBeans index" do
         visit "/roasters/#{@stumptown.id}/coffeebeans"
 
