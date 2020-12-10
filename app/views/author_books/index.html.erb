@@ -1,5 +1,7 @@
 <%= link_to 'welcome', "/" %>
-<h1>All Books by <%= @author.name %></h1>
+<%= link_to 'authors index', "/authors" %>
+<%= link_to 'books index', "/books" %>
+<h1>All Books by <%= link_to "#{@author.name}", "/authors/#{@author.id}" %></h1>
 <p>This author has <%= @author_books.count %> books</p>
 
 <p><%= link_to 'Sort by alphabetical name', author_book_new_path(:sort => "alphabetical") %></p>

@@ -1,3 +1,7 @@
+<%= link_to 'welcome', "/" %>
+<%= link_to 'authors index', "/authors" %>
+<%= link_to 'books index', "/books" %>
+
 <%= form_tag("/authors/#{@author.id}", method: :patch) do %>
   <%= label_tag :name %>
   <%= text_field_tag :name %>
