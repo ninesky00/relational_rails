@@ -1,3 +1,5 @@
+<p><%= link_to "Complete Coffee Bean List", "/coffeebeans" %> </p>
+
 <h1>Edit <%= @roaster.name %> Information</h1>
 <%= form_tag "/roasters/#{@roaster.id}", :method => "patch" do %>
     <%= label_tag :name %>

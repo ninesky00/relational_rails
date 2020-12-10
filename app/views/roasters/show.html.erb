@@ -1,6 +1,9 @@
+<p><%= link_to "Complete Coffee Bean List", "/coffeebeans" %> </p>
+
 <h1><%= @roaster.name %></h1>
 <h3><%= link_to "List of coffee currently being sold", "/roasters/#{@roaster.id}/coffeebeans"%></h3>
 <%= link_to "Edit", "/roasters/#{@roaster.id}/edit"%>
+
 <%= button_to "Delete", "/roasters/#{@roaster.id}", method: :delete %>
 <li>
     <ul>Microroastery: <%= @roaster.micro %></ul>

@@ -1,3 +1,5 @@
+<p><%= link_to "Complete Coffee Bean List", "/coffeebeans" %> </p>
+
 <h1>Edit <%= @coffeebean.name %> Info</h1>
 
 <%= form_tag "/coffeebeans/#{@coffeebean.id}", method: :patch do %>
