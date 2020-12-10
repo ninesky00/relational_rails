@@ -13,6 +13,7 @@ RSpec.describe 'Show' do
         expect(page).to have_content (stumptown.created_at)
         expect(page).to have_content (stumptown.updated_at)
     end
+    #story26
     it "can lead from Roaster index to Roaster - Coffee Beans Index" do
         stumptown = Roaster.create!(name: "Stumptown Coffee", micro: false, subscription_service: true, location: "Koreatown, NY")
         visit "/roasters/#{stumptown.id}"
@@ -20,6 +21,7 @@ RSpec.describe 'Show' do
 
         expect(current_path).to eq("/roasters/#{stumptown.id}/coffeebeans")
     end
+    #story22
     it "click on any Roaster name in the web page to lead back to Roaster index" do
         stumptown = Roaster.create!(name: "Stumptown Coffee", micro: false, subscription_service: true, location: "Koreatown, NY")
         visit "/roasters/#{stumptown.id}/coffeebeans"

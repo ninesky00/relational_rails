@@ -18,6 +18,7 @@ RSpec.describe 'Show' do
         @kirinyaga_kaguyu = @blue_bottle.coffee_beans.create!(name: "Kenya Kirinyaga Kaguyu", weight: 12, blend: false, roast: "Light", country_of_origin: "Kenya")
         @santa_rosa_finca_santa_ana = @blue_bottle.coffee_beans.create!(name: "Guatemala Santa Rosa Finca Santa Ana", weight: 12, blend: false, roast: "Dark", country_of_origin: "Guatemala")
     end
+    #story8
     it "can see the entry for a specific CoffeeBean" do
         visit "/coffeebeans/#{@hair_bender.id}"
 

@@ -18,6 +18,7 @@ RSpec.describe 'Edit' do
         @kirinyaga_kaguyu = @blue_bottle.coffee_beans.create!(name: "Kenya Kirinyaga Kaguyu", weight: 12, blend: false, roast: "Light", country_of_origin: "Kenya")
         @santa_rosa_finca_santa_ana = @blue_bottle.coffee_beans.create!(name: "Guatemala Santa Rosa Finca Santa Ana", weight: 12, blend: false, roast: "Dark", country_of_origin: "Guatemala")
     end
+    #story 10
     it "can see update link and fill in update form" do
         visit "/coffeebeans/#{@costa_rica_naranjo.id}"
 

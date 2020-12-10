@@ -18,6 +18,7 @@ RSpec.describe 'Index' do
         @kirinyaga_kaguyu = @blue_bottle.coffee_beans.create!(name: "Kenya Kirinyaga Kaguyu", weight: 12, blend: false, roast: "Light", country_of_origin: "Kenya")
         @santa_rosa_finca_santa_ana = @blue_bottle.coffee_beans.create!(name: "Guatemala Santa Rosa Finca Santa Ana", weight: 12, blend: false, roast: "Dark", country_of_origin: "Guatemala")
     end
+    #story15
     it "can filter Roaster index based on threshold input" do
         visit '/coffeebeans'
         fill_in "weight", with: 20
@@ -26,6 +27,7 @@ RSpec.describe 'Index' do
         expect(page).not_to have_content(@honduras_el_puente.name)
         expect(page).not_to have_content(@hair_bender.name)
     end
+    #story14
     it "can sort by boolean column default when visiting CoffeeBeans index" do
         visit '/coffeebeans'
 
