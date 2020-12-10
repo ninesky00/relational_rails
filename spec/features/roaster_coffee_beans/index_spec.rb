@@ -35,4 +35,10 @@ RSpec.describe 'Index' do
 
         expect(page).to have_content("2 types of coffee beans")
     end
+    it "can have a link from every Roaster - CoffeeBean record to lead back to CoffeeBeans Index" do
+        visit "/roasters/#{@stumptown.id}/coffeebeans"
+        click_link "#{@stumptown.coffee_beans.first.name}"
+        
+        expect(current_path).to eq("/coffeebeans/#{@stumptown.coffee_beans.first.id}")
+    end
 end

@@ -46,5 +46,16 @@ RSpec.describe 'Index Page' do
         expect(page.all('a')[7]).to have_content("Delete")
         expect(page.all('a')[10]).to have_content("Delete")
     end
+    it "can have a link from every page to lead back to Roaster Index" do
+        visit '/coffeebeans'
+        click_link "Complete Roaster List"
 
+        expect(current_path).to eq("/roasters")
+    end
+    it "can have a link from every page to lead back to CoffeeBeans Index" do
+        visit '/roasters'
+        click_link "Complete Coffee Bean List"
+        
+        expect(current_path).to eq("/coffeebeans")
+    end
 end
