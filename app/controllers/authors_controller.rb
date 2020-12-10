@@ -2,6 +2,8 @@ class AuthorsController < ApplicationController
   def index
     if params[:age]
       @authors = Author.where("age >= ?", params[:age])
+    elsif params[:books]
+      @authors = Author.sort_by_book_count
     else
       @authors = Author.sort_by_boolean
     end

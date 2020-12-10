@@ -1,8 +1,10 @@
 <%= link_to 'welcome', "/" %>
 <h1>All Books by <%= @author.name %></h1>
-<p>This author has <%= @authorbooks.count %> books</p>
+<p>This author has <%= @author_books.count %> books</p>
 
-<% @authorbooks.each do |book|%>
+<p><%= link_to 'Sort by alphabetical name', author_book_new_path(:sort => "alphabetical") %></p>
+
+<% @author_books.each do |book|%>
 <p>Name: <%= link_to "#{book.name}", "/books/#{book.id}" %></p>
 <p>Publication_date: <%= book.publication_date %></p>
 <p>Pages: <%= book.pages %></p>
