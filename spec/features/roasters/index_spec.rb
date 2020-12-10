@@ -39,5 +39,12 @@ RSpec.describe 'Index Page' do
         expect(page.all('a')[6]).to have_content("Edit")
         expect(page.all('a')[9]).to have_content("Edit")
     end
+    it "can have an Delete link per Roaster entry" do
+        visit '/roasters'
+
+        expect(page.all('a')[4]).to have_content("Delete")
+        expect(page.all('a')[7]).to have_content("Delete")
+        expect(page.all('a')[10]).to have_content("Delete")
+    end
 
 end
