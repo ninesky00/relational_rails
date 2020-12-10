@@ -18,6 +18,7 @@ RSpec.describe 'Index Page' do
         @kirinyaga_kaguyu = @blue_bottle.coffee_beans.create!(name: "Kenya Kirinyaga Kaguyu", weight: 12, blend: false, roast: "Light", country_of_origin: "Kenya")
         @santa_rosa_finca_santa_ana = @blue_bottle.coffee_beans.create!(name: "Guatemala Santa Rosa Finca Santa Ana", weight: 12, blend: false, roast: "Dark", country_of_origin: "Guatemala")
     end
+    #story1
     it 'can see all the Roaster names' do
         visit '/roasters'
 
@@ -26,12 +27,14 @@ RSpec.describe 'Index Page' do
         expect(page).to have_content(@switchback.name)
         expect(page).to have_content(@blue_bottle.name)
     end
+    #story16
     it "can sort roasters by amount of coffees they sell" do
         visit '/roasters'
         click_link "Sort list by roaster's # of different coffees"
 
         expect(page.all('a')[2]).to have_content("Blue Bottle Coffee")
     end
+    #story18
     it "can have an Edit link per Roaster entry" do
         visit '/roasters'
 
@@ -39,6 +42,7 @@ RSpec.describe 'Index Page' do
         expect(page.all('a')[6]).to have_content("Edit")
         expect(page.all('a')[9]).to have_content("Edit")
     end
+    #story19
     it "can have an Delete link per Roaster entry" do
         visit '/roasters'
 
@@ -46,5 +50,18 @@ RSpec.describe 'Index Page' do
         expect(page.all('a')[7]).to have_content("Delete")
         expect(page.all('a')[10]).to have_content("Delete")
     end
+    #story25
+    it "can have a link from every page to lead back to Roaster Index" do
+        visit '/coffeebeans'
+        click_link "Complete Roaster List"
 
+        expect(current_path).to eq("/roasters")
+    end
+    #story24
+    it "can have a link from every page to lead back to CoffeeBeans Index" do
+        visit '/roasters'
+        click_link "Complete Coffee Bean List"
+        
+        expect(current_path).to eq("/coffeebeans")
+    end
 end

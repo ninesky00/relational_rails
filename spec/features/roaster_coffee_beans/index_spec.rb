@@ -18,21 +18,31 @@ RSpec.describe 'Index' do
         @kirinyaga_kaguyu = @blue_bottle.coffee_beans.create!(name: "Kenya Kirinyaga Kaguyu", weight: 12, blend: false, roast: "Light", country_of_origin: "Kenya")
         @santa_rosa_finca_santa_ana = @blue_bottle.coffee_beans.create!(name: "Guatemala Santa Rosa Finca Santa Ana", weight: 12, blend: false, roast: "Dark", country_of_origin: "Guatemala")
     end
+    #story17
     it "can sort Roaster's Coffees alphabetically" do
         visit "/roasters/#{@blue_bottle.id}/coffeebeans"
         click_link "Sort beans by alphabetical order"
 
         expect(page.all('a')[4]).to have_content("Guatemala Santa Rosa Finca Santa Ana")
     end
+    #story7
     it "can reach the Roaster's CoffeeBean index" do
         visit "roasters/#{@stumptown.id}/coffeebeans"
 
         expect(page).to have_content(@stumptown.coffee_beans.first.name)
         expect(page).to have_content(@stumptown.coffee_beans.last.name)
     end
+    #story13
     it "can display count of coffee products per Roaster on Roaster-CoffeeBeans index" do
         visit "/roasters/#{@stumptown.id}/coffeebeans"
 
         expect(page).to have_content("2 types of coffee beans")
+    end
+    #story26
+    it "can have a link from every Roaster - CoffeeBean record to lead back to CoffeeBeans Index" do
+        visit "/roasters/#{@stumptown.id}/coffeebeans"
+        click_link "#{@stumptown.coffee_beans.first.name}"
+        
+        expect(current_path).to eq("/coffeebeans/#{@stumptown.coffee_beans.first.id}")
     end
 end
