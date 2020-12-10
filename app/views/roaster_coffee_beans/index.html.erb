@@ -1,4 +1,4 @@
-<h1>Coffee Beans By <%= @roaster.name %></h1>
+<h1>Coffee Beans By <%= link_to @roaster.name, "/roasters/#{@roaster.id}" %></h1>
 <h3><%= @roaster.coffee_count %> types of coffee beans</h3>
 <%= link_to "Sort beans by alphabetical order", roaster_coffee_path(:sorted_by_alpha => "sorted_by_alpha") %>
 </br></br>
