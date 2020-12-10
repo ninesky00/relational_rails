@@ -1,5 +1,15 @@
+<p><%= link_to "Complete Coffee Bean List", "/coffeebeans" %> </p>
+
 <h1>Roaster List</h1>
 
+<%= link_to "Sort list by roaster's # of different coffees", roasters_path(:sort_by_count => "sort_by_coffee_count") %>
+</br></br>
 <% @roasters.each do |roaster| %>
-    <h2><%= roaster.name =%></h2>
+    <%= link_to "#{roaster.name}", "/roasters/#{roaster.id}" %>  
+    <%= link_to "Edit", roaster_update_path(:id => roaster.id)%>
+    <%= link_to "Delete", "/roasters/#{roaster.id}", method: :delete %>
+    <p>- <%= roaster.coffee_count %> types of coffee</p>
+    <p>Created at: <%= roaster.created_at %></p>
+    </br></br>
 <% end %>
+<%= link_to "New Roaster",  "/roasters/new"%>

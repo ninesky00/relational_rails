@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Index Page' do 
+RSpec.describe 'Edit' do
     before :each do
         @stumptown = Roaster.create!(name: "Stumptown Coffee", micro: false, subscription_service: true, location: "Koreatown, NY")
         @starbuckspr = Roaster.create!(name: "Starbucks Private Reserve", micro: false, subscription_service: false, location: "Chelsea, NY")
@@ -18,33 +18,25 @@ RSpec.describe 'Index Page' do
         @kirinyaga_kaguyu = @blue_bottle.coffee_beans.create!(name: "Kenya Kirinyaga Kaguyu", weight: 12, blend: false, roast: "Light", country_of_origin: "Kenya")
         @santa_rosa_finca_santa_ana = @blue_bottle.coffee_beans.create!(name: "Guatemala Santa Rosa Finca Santa Ana", weight: 12, blend: false, roast: "Dark", country_of_origin: "Guatemala")
     end
-    it 'can see all the Roaster names' do
-        visit '/roasters'
+    it "can see update link and fill in update form" do
+        visit "/coffeebeans/#{@costa_rica_naranjo.id}"
 
-        expect(page).to have_content(@stumptown.name)
-        expect(page).to have_content(@starbuckspr.name)
-        expect(page).to have_content(@switchback.name)
-        expect(page).to have_content(@blue_bottle.name)
+        click_link 'Update Coffee Bean'
+  
+        expect(current_path).to eq("/coffeebeans/#{@costa_rica_naranjo.id}/edit")
+  
+        fill_in 'Name', with: 'costa rica'
+        fill_in 'roast', with: "Dark"
+        fill_in 'country_of_origin', with: "test"
+        fill_in 'blend', with: "true"
+        fill_in 'weight', with: "12"
+  
+        click_on "Edit Coffee Bean"
+  
+        expect(current_path).to eq("/coffeebeans/#{@costa_rica_naranjo.id}")
+        expect(page).to have_content("costa rica")
+        expect(page).to have_content("Dark")
+        expect(page).to have_content("true")
+        expect(page).to have_content("12")
     end
-    it "can sort roasters by amount of coffees they sell" do
-        visit '/roasters'
-        click_link "Sort list by roaster's # of different coffees"
-
-        expect(page.all('a')[2]).to have_content("Blue Bottle Coffee")
-    end
-    it "can have an Edit link per Roaster entry" do
-        visit '/roasters'
-
-        expect(page.all('a')[3]).to have_content("Edit")
-        expect(page.all('a')[6]).to have_content("Edit")
-        expect(page.all('a')[9]).to have_content("Edit")
-    end
-    it "can have an Delete link per Roaster entry" do
-        visit '/roasters'
-
-        expect(page.all('a')[4]).to have_content("Delete")
-        expect(page.all('a')[7]).to have_content("Delete")
-        expect(page.all('a')[10]).to have_content("Delete")
-    end
-
 end

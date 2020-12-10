@@ -1,0 +1,17 @@
+<p><%= link_to "Complete Roaster List", "/roasters" %> </p>
+
+<h1>Coffee Beans</h1>
+<h3><%= @coffeebeans.count %> coffee bean products on this list</h3></br>
+<%= form_tag "/coffeebeans", method: :get do %>
+    <%= label_tag :weight, "Find coffee bean products sold with at least this many oz's: " %>
+    <%= number_field_tag :weight %>
+    <%= submit_tag "Filter" %>
+<% end %>
+</br></br>
+<% @coffeebeans.each do |coffeebean| %>
+    <%= link_to "#{coffeebean.name}", "/coffeebeans/#{coffeebean.id}" %>
+    <%= link_to "Edit", coffee_bean_update_path(:id => coffeebean.id)%>
+    <%= link_to "Delete", "/coffeebeans/#{coffeebean.id}", method: :delete %>
+    <p>Blend: <%= coffeebean.blend %></p>
+    <p>Created at: <%= coffeebean.created_at %></p></br></br>
+<% end %>

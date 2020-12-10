@@ -1,7 +1,27 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
-  # get '/roasters', to: 'roasters#index'
+  # Roaster Routes
+  get '/roasters', to: 'roasters#index'
+  get '/roasters/new', to: 'roasters#new'
+  get '/roasters/:id', to: 'roasters#show'
+  get '/roasters/:id/edit', to: 'roasters#edit', as: :roaster_update
+  patch '/roasters/:id', to: 'roasters#update'
+  post '/roasters', to: 'roasters#create'
+  delete '/roasters/:id', to: 'roasters#delete'
+  
+  # Coffee Beans Routes
+  get '/coffeebeans', to: 'coffee_beans#index'
+  get '/coffeebeans/:id', to: 'coffee_beans#show'
+  get '/coffeebeans/:id/edit', to: 'coffee_beans#edit', as: :coffee_bean_update
+  patch '/coffeebeans/:id', to: 'coffee_beans#update'
+  delete '/coffeebeans/:id', to: 'coffee_beans#delete'
+
+  # Coffee Bean -> Roasters Routes
+  get '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#index', as: :roaster_coffee
+  post '/roasters/:id/coffeebeans', to: 'roaster_coffee_beans#create'
+  get '/roasters/:id/coffeebeans/new', to: 'roaster_coffee_beans#new'
+  
+  get '/', to: 'welcome#index'
   
   get '/books', to: 'books#index'
   get '/books/:book_id', to: 'books#show'
@@ -20,11 +40,5 @@ Rails.application.routes.draw do
   get '/authors/:author_id/books', to: 'author_books#index', as: "author_book_new"
   get '/authors/:author_id/books/new', to: 'author_books#new'
   post '/authors/:author_id/books', to: 'author_books#create'
-  # get '/authors/:author_id/books/:book_id/edit', to: 'author_books#edit'
-  # patch '/authors/:author_id/books/:book_id', to: 'author_books#update'
-  # delete '/authors/:author_id/books/:book_id', to: 'author_books#destroy'
-  
-  # resources :authors do 
-  #   resources :books
-  # end
+
 end

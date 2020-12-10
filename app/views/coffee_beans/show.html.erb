@@ -1,0 +1,15 @@
+<p><%= link_to "Complete Coffee Bean List", "/coffeebeans" %> </p>
+<p><%= link_to "Complete Roaster List", "/roasters" %> </p>
+
+<h1><%= @coffeebean.name %></h1>
+<li>
+    <ul>Roast: <%= @coffeebean.roast %></ul>
+    <ul>Weight(oz): <%= @coffeebean.weight %></ul>
+    <ul>Country of Origin: <%= @coffeebean.country_of_origin %></ul>
+    <ul>Blended? <%= @coffeebean.blend %></ul>
+    <ul>Created At: <%= @coffeebean.created_at %></ul>
+    <ul>Updated At: <%= @coffeebean.updated_at %></ul>
+</li>
+
+<%= link_to "Update Coffee Bean", "/coffeebeans/#{@coffeebean.id}/edit" %>
+<%= button_to "Delete", "/coffeebeans/#{@coffeebean.id}", method: :delete %>
