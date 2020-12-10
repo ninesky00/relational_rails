@@ -17,7 +17,7 @@ RSpec.describe 'Index' do
         @winter_blooms_blend = @blue_bottle.coffee_beans.create!(name: "Winter Blooms Blend", weight: 6, blend: true, roast: "Medium", country_of_origin: "N/A")
         @kirinyaga_kaguyu = @blue_bottle.coffee_beans.create!(name: "Kenya Kirinyaga Kaguyu", weight: 12, blend: false, roast: "Light", country_of_origin: "Kenya")
         @santa_rosa_finca_santa_ana = @blue_bottle.coffee_beans.create!(name: "Guatemala Santa Rosa Finca Santa Ana", weight: 12, blend: false, roast: "Dark", country_of_origin: "Guatemala")
-      end
+    end
     it "can sort Roaster's Coffees alphabetically" do
         visit "/roasters/#{@blue_bottle.id}/coffeebeans"
         click_link "Sort beans by alphabetical order"
